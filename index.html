@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ReconForge — Reconnaissance Command Reference</title>
+  <meta name="description" content="A professional, text-only reconnaissance command reference for authorized penetration testing and bug bounty. 470+ ready-to-run commands across 40 phases, with an in-depth methodology guide." />
+  <meta name="keywords" content="reconnaissance, bug bounty, penetration testing, kali linux, security methodology, nmap, subfinder, ffuf, nuclei" />
+  <meta name="color-scheme" content="dark light" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/app.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div class="brand">
+        <span class="brand-name">ReconForge</span>
+        <span class="brand-sub">Reconnaissance Command Reference</span>
+      </div>
+      <nav class="tabs" aria-label="Primary">
+        <button class="tab is-active" data-view="commands" aria-selected="true">Commands</button>
+        <button class="tab" data-view="education" aria-selected="false">Methodology</button>
+        <button class="tab" data-view="about" aria-selected="false">About</button>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">Light</button>
+    </div>
+  </header>
+
+  <!-- COMMANDS VIEW -->
+  <div id="view-commands" class="view is-active">
+    <section class="control-bar">
+      <div class="wrap control-inner">
+        <div class="field">
+          <label for="target">Target domain or IP</label>
+          <input id="target" type="text" spellcheck="false" autocomplete="off"
+                 placeholder="example.com   or   192.168.1.10" value="example.com" />
+        </div>
+        <div class="field">
+          <label for="url">Full URL (optional)</label>
+          <input id="url" type="text" spellcheck="false" autocomplete="off"
+                 placeholder="https://example.com" value="https://example.com" />
+        </div>
+        <div class="field grow">
+          <label for="search">Search commands</label>
+          <input id="search" type="search" spellcheck="false" autocomplete="off"
+                 placeholder="Type to filter across all phases, tools and commands" />
+        </div>
+        <div class="field stat-field">
+          <span class="stat"><strong id="statCmds">0</strong> commands</span>
+          <span class="stat"><strong id="statCats">0</strong> phases</span>
+        </div>
+      </div>
+    </section>
+
+    <main id="main" class="layout wrap">
+      <aside class="sidebar" aria-label="Phases">
+        <div class="sidebar-head">Phases</div>
+        <nav id="catNav" class="cat-nav"></nav>
+      </aside>
+      <section class="content">
+        <div id="emptyState" class="empty" hidden>No commands match your search.</div>
+        <div id="cmdRoot"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- EDUCATION VIEW -->
+  <div id="view-education" class="view">
+    <main class="wrap doc" id="eduRoot"></main>
+  </div>
+
+  <!-- ABOUT VIEW -->
+  <div id="view-about" class="view">
+    <main class="wrap doc" id="aboutRoot"></main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>ReconForge — for authorized security testing only. Always operate within an explicit written scope.</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/education.js"></script>
+  <script src="assets/app.js"></script>
+</body>
+</html>
